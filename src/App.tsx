@@ -354,6 +354,7 @@ import {
   BookOpen,
   ArrowRight,
   Menu,
+  ExternalLink,
   X
 } from 'lucide-react';
 import { title } from 'process';
@@ -367,10 +368,12 @@ const timelineData = [
     description: "Quá trình chuẩn bị và bước ngoặt thành lập Đảng.",
     imageUrl: "https://imgcdn.tapchicongthuong.vn/thumb/w_1000/tcct-media/23/9/1/1945_64f20633006a6.jpg",
     events: [
-      { year: "1920", title: "Tìm thấy con đường cứu nước", description: "Nguyễn Ái Quốc đọc Sơ thảo Luận cương của Lênin, xác định con đường giải phóng dân tộc theo cách mạng vô sản." },
-      { year: "1925", title: "Chuẩn bị về tổ chức", description: "Thành lập Hội Việt Nam Cách mạng Thanh niên, đào tạo cán bộ nòng cốt tại Quảng Châu." },
-      { year: "1929", title: "Sự ra đời của 3 tổ chức Cộng sản", description: "Đông Dương CS Đảng, An Nam CS Đảng và Đông Dương CS Liên đoàn ra đời, khẳng định nhu cầu cấp thiết phải hợp nhất." },
-      { year: "1930", title: "Hội nghị hợp nhất thành lập Đảng", description: "Từ 6/1 đến 7/2/1930, thành lập Đảng Cộng sản Việt Nam và thông qua Cương lĩnh chính trị đầu tiên." }
+      { year: "1920", title: "Tìm thấy con đường cứu nước tại Pháp", description: "Nguyễn Ái Quốc đọc Sơ thảo Luận cương của Lênin, xác định con đường giải phóng dân tộc theo cách mạng vô sản.", link: "https://baotanglichsu.vn/vi/Articles/3097/15553/25-12-1920-nguyen-ai-quoc-tham-du-djai-hoi-lan-thu-xviii-djang-xa-hoi-phap.html" },
+      { year: "1925", title: "Chuẩn bị về tổ chức", description: "Thành lập Hội Việt Nam Cách mạng Thanh niên, đào tạo cán bộ nòng cốt tại Quảng Châu." , link: "https://tapchilichsudang.vn/nguyen-ai-quoc-sang-lap-hoi-viet-nam-cach-mang-thanh-nien-va-to-bao-thanh-nien.html"},
+      { year: "1927", title: "Trang bị lý luận cách mạng", description: "Xuất bản tác phẩm 'Đường Kách mệnh'.Đây là sự tổng kết kinh nghiệm các cuộc cách mạng thế giới và vạch ra những vấn đề cơ bản về chiến lược, sách lược cho cách mạng Việt Nam, là 'kim chỉ nam' cho phong trào yêu nước lúc bấy giờ." , link: "https://vi.wikipedia.org/wiki/%C4%90%C6%B0%E1%BB%9Dng_K%C3%A1ch_m%E1%BB%87nh"},
+      { year: "1928", title: "Phong trào 'Vô sản hóa'", description: "Đảng viên, hội viên Hội Việt Nam Cách mạng Thanh niên đi sâu vào các hầm mỏ, nhà máy để cùng sống, cùng làm việc với công nhân. Qua đó rèn luyện ý chí và đẩy mạnh việc truyền bá lý luận cách mạng vào giai cấp tiên phong.", link: ""},
+      { year: "1929", title: "Sự ra đời của 3 tổ chức Cộng sản", description: "Đông Dương CS Đảng, An Nam CS Đảng và Đông Dương CS Liên đoàn ra đời, khẳng định nhu cầu cấp thiết phải hợp nhất.", link: "" },
+      { year: "1930", title: "Hội nghị hợp nhất thành lập Đảng", description: "Từ 6/1 đến 7/2/1930, thành lập Đảng Cộng sản Việt Nam và thông qua Cương lĩnh chính trị đầu tiên." , link: ""}
     ]
   },
   {
@@ -380,11 +383,12 @@ const timelineData = [
     description: "Các cao trào cách mạng dẫn tới thắng lợi của Cách mạng Tháng Tám.",
     imageUrl: "https://vnanet.vn/Data/Articles/2020/01/07/4355495/vna_potal_90_nam_dcs_viet_nam_dang_lanh_dao_dau_tranh_gianh_chinh_quyen_1930_%E2%80%93_1945_151221030_stand.jpg",
     events: [
-      { year: "1930-1931", title: "Phong trào Xô viết Nghệ Tĩnh", description: "Cuộc tổng diễn tập đầu tiên, khẳng định quyền lãnh đạo của giai cấp công nhân và liên minh công - nông." },
-      { year: "1936", title: "Cao trào Dân chủ", description: "Đảng chủ trương đấu tranh đòi dân sinh, dân chủ, cơm áo, hòa bình; kết hợp đấu tranh công khai và bí mật." },
-      { year: "1941", title: "Hội nghị Trung ương 8", description: "Nguyễn Ái Quốc về nước, thành lập mặt trận Việt Minh, đặt nhiệm vụ giải phóng dân tộc lên hàng đầu." },
-      { year: "1944", title: "Thành lập Đội VN Tuyên truyền Giải phóng quân", description: "Ngày 22/12, tiền thân của Quân đội nhân dân Việt Nam chính thức được thành lập." },
-      { year: "1945", title: "Cách mạng Tháng Tám", description: "Tổng khởi nghĩa giành chính quyền. Ngày 2/9, Chủ tịch Hồ Chí Minh đọc Tuyên ngôn Độc lập." }
+      { year: "1930-1931", title: "Phong trào Xô viết Nghệ Tĩnh", description: "Cuộc tổng diễn tập đầu tiên, khẳng định quyền lãnh đạo của giai cấp công nhân và liên minh công - nông." , link: ""},
+      { year: "1932-1935", title: "Phục hồi lực lượng", description: "Đại hội lần thứ I của Đảng tại Ma Cao (Trung Quốc), đánh dấu sự phục hồi hệ thống tổ chức của Đảng từ Trung ương đến địa phương.", link: ""},
+      { year: "1936", title: "Cao trào Dân chủ", description: "Đảng chủ trương đấu tranh đòi dân sinh, dân chủ, cơm áo, hòa bình; kết hợp đấu tranh công khai và bí mật." , link: ""},
+      { year: "1941", title: "Hội nghị Trung ương 8", description: "Nguyễn Ái Quốc về nước, thành lập mặt trận Việt Minh, đặt nhiệm vụ giải phóng dân tộc lên hàng đầu." , link: ""},
+      { year: "1944", title: "Thành lập Đội VN Tuyên truyền Giải phóng quân", description: "Ngày 22/12, tiền thân của Quân đội nhân dân Việt Nam chính thức được thành lập." , link: ""},
+      { year: "1945", title: "Cách mạng Tháng Tám", description: "Tổng khởi nghĩa giành chính quyền. Ngày 2/9, Chủ tịch Hồ Chí Minh đọc Tuyên ngôn Độc lập.", link: "" }
     ]
   },
   {
@@ -394,10 +398,13 @@ const timelineData = [
     description: "Xây dựng chính quyền và kháng chiến trường kỳ.",
     imageUrl: "https://bvhttdl.gov.vn/uploads/oldscontents/20211216150107452/o-chi-minh-trong-mot-bua-com-cung-dong-bao-chien-sy-tai-chien-khu-viet-bac-thoi-ky-khang-chien-chong.jpg",
     events: [
-      { year: "1946", title: "Lời kêu gọi toàn quốc kháng chiến", description: "Ngày 19/12, phát động kháng chiến toàn quốc sau những nỗ lực hòa bình bất thành với Pháp." },
-      { year: "1950", title: "Chiến dịch Biên giới Thu Đông", description: "Tiêu diệt sinh lực địch, khai thông biên giới Việt - Trung, giành quyền chủ động trên chiến trường chính." },
-      { year: "1951", title: "Đại hội đại biểu toàn quốc lần thứ II", description: "Đảng ra hoạt động công khai với tên gọi Đảng Lao động Việt Nam, kiện toàn đường lối kháng chiến." },
-      { year: "1954", title: "Chiến thắng Điện Biên Phủ", description: "Đánh bại hoàn toàn thực dân Pháp, buộc địch ký Hiệp định Giơ-ne-vơ chấm dứt chiến tranh." }
+      { year: "1945 - 1946", title: "Bảo vệ chính quyền non trẻ", description: "1945, chính phủ lâm thời đối mặt với 'Thù trong, giặc ngoài'. 1946, tổng tuyển cử bầu Quốc hội khóa I, khẳng định tính hợp hiến của chính quyền cách mạng. Ký Hiệp định Sơ bộ, thực hiện sách lược 'Hòa để tiến' nhằm đẩy quân Tưởng về nước, kéo dài thời gian chuẩn bị kháng chiến.", link: ""},
+      { year: "1946", title: "Lời kêu gọi toàn quốc kháng chiến", description: "Ngày 19/12, phát động kháng chiến toàn quốc sau những nỗ lực hòa bình bất thành với Pháp." , link: ""},
+      { year: "1947", title: "Chiến dịch Việt Bắc Thu - Đông", description: "Ta đập tan kế hoạch 'Đánh nhanh thắng nhanh' của Pháp, bảo vệ an toàn cơ quan đầu não kháng chiến.", link: ""},
+      { year: "1950", title: "Bước ngoặt chiến lược", description: "Tiêu diệt sinh lực địch, khai thông biên giới Việt - Trung, giành quyền chủ động trên chiến trường chính.Pháp chuyển sang kế hoạch 'Phòng ngự'." , link: ""},
+      { year: "1951", title: "Đại hội đại biểu toàn quốc lần thứ II", description: "Đảng ra hoạt động công khai với tên gọi Đảng Lao động Việt Nam, kiện toàn đường lối kháng chiến." , link: ""},
+      { year: "1953-1954", title: "Cuộc tiến công chiến lược Đông Xuân", description: "Cuối năm 1953: Bộ Chính trị thông qua kế hoạch tác chiến, tập trung lực lượng tiến công vào những hướng chiến lược trọng yếu mà địch tương đối yếu (Lai Châu, Trung Lào, Hạ Lào...). Tháng 12/1953: Pháp tăng cường lực lượng xây dựng Điện Biên Phủ thành 'pháo đài bất khả xâm phạm' để thách thức quân ta.", link: ""},
+      { year: "1954", title: "Thắng lợi hoàn toàn", description: "Đánh bại hoàn toàn thực dân Pháp trong Chiến dịch Điện Biên Phủ, buộc địch ký Hiệp định Giơ-ne-vơ chấm dứt chiến tranh và ách thống trị của thực dân Pháp tại Việt Nam.", link: "" }
     ]
   },
   {
@@ -407,15 +414,15 @@ const timelineData = [
     description: "Xây dựng Miền Bắc, giải phóng Miền Nam.",
     imageUrl: "https://media.baovanhoa.vn/zoom/1000/uploaded/nguyenthithutrang/2025_04_30/a_wfzy.jpg",
     events: [
-      { year: "1959", title: "Nghị quyết Trung ương 15", description: "Xác định con đường cách mạng miền Nam là bạo lực cách mạng, dẫn tới phong trào Đồng Khởi 1960." },
-      { year: "1961-1965", title: "Mỹ thực hiện chiến lược Chiến tranh đặc biệt, tuy nhiên, dưới sự đấu tranh mạnh mẽ và quyết liệt của quân và dân miền Nam thì chiến lước này đã thất bại hoàn toàn."},
-      { year: "1965", title: "Sau thất bại của chiến lược Chiến tranh cục bộ.", description: "Mỹ chuyển sang chiến lược Chiến tranh cục bộ, đồng thời tiến hành phá hoại bằng không quân và hải quân đối với miền Bắc."},
-      { year: "1968", title: "Tổng tiến công Tết Mậu Thân", description: "Làm lung lay ý chí xâm lược của Mỹ, buộc Mỹ phải tuyên bố phi Mỹ hóa chiến tranh." },
-      { year: "1969", title: "Đối phó với chiến lược Việt Nam hóa chiến tranh", description: "Lúc này, tổng thống Mỹ mới lên là Richard Nixon đã đề xuất và tiến hành triển khai chiến lược Việt Nam hóa chiến tranh, mục đích là rút dần quân đội nhưng vẫn giữ được chính quyền ở Miền Nam."},
-      { year: "1971", title: "Chiến dịch đường 9-Nam Lào", description: "Quân và dân ta phối hợp với quân dân Lào giành thắng lợi trong chiến dịch Đường 9-Nam Lào, đánh bại cuộc hành quân Lam Sơn 719 của Mỹ và quân đội Sài Gòn, từ đó bảo vệ vững chắc con đường tiếp tế chiến lược."},
-      { year: "1972", title: "Điện Biên Phủ trên không", description: "Đánh bại cuộc tập kích 12 ngày đêm bằng B-52 của Mỹ vào Hà Nội, Hải Phòng (18-30/12/1972)." },
-      { year: "1973", title: "Hiệp định Paris-Thắng lợi trên mặt trận ngoại giao", description: "Kết quả tất yếu của những nỗ lực quân sự trước đó chính là việc kí kết Hiệp định Paris ngày 27-1-1973."},
-      { year: "1975", title: "Chiến dịch Hồ Chí Minh", description: "Ngày 30/4, giải phóng hoàn toàn miền Nam, thống nhất đất nước." }
+      { year: "1959", title: "Nghị quyết Trung ương 15", description: "Xác định con đường cách mạng miền Nam là bạo lực cách mạng, dẫn tới phong trào Đồng Khởi 1960." , link: ""},
+      { year: "1961-1965", title: "Mỹ thực hiện chiến lược Chiến tranh đặc biệt, tuy nhiên, dưới sự đấu tranh mạnh mẽ và quyết liệt của quân và dân miền Nam thì chiến lước này đã thất bại hoàn toàn.", link: ""},
+      { year: "1965", title: "Sau thất bại của chiến lược Chiến tranh cục bộ.", description: "Mỹ chuyển sang chiến lược Chiến tranh cục bộ, đồng thời tiến hành phá hoại bằng không quân và hải quân đối với miền Bắc.", link: ""},
+      { year: "1968", title: "Tổng tiến công Tết Mậu Thân", description: "Làm lung lay ý chí xâm lược của Mỹ, buộc Mỹ phải tuyên bố phi Mỹ hóa chiến tranh." , link: ""},
+      { year: "1969", title: "Đối phó với chiến lược Việt Nam hóa chiến tranh", description: "Lúc này, tổng thống Mỹ mới lên là Richard Nixon đã đề xuất và tiến hành triển khai chiến lược Việt Nam hóa chiến tranh, mục đích là rút dần quân đội nhưng vẫn giữ được chính quyền ở Miền Nam.", link: ""},
+      { year: "1971", title: "Chiến dịch đường 9-Nam Lào", description: "Quân và dân ta phối hợp với quân dân Lào giành thắng lợi trong chiến dịch Đường 9-Nam Lào, đánh bại cuộc hành quân Lam Sơn 719 của Mỹ và quân đội Sài Gòn, từ đó bảo vệ vững chắc con đường tiếp tế chiến lược.", link: ""},
+      { year: "1972", title: "Điện Biên Phủ trên không", description: "Đánh bại cuộc tập kích 12 ngày đêm bằng B-52 của Mỹ vào Hà Nội, Hải Phòng (18-30/12/1972)." , link: ""},
+      { year: "1973", title: "Hiệp định Paris-Thắng lợi trên mặt trận ngoại giao", description: "Kết quả tất yếu của những nỗ lực quân sự trước đó chính là việc kí kết Hiệp định Paris ngày 27-1-1973.", link: ""},
+      { year: "1975", title: "Chiến dịch Hồ Chí Minh", description: "Ngày 30/4, giải phóng hoàn toàn miền Nam, thống nhất đất nước." , link: ""}
     ]
   },
   {
@@ -425,13 +432,68 @@ const timelineData = [
     description: "Đưa đất nước thoát khỏi khủng hoảng và hội nhập quốc tế.",
     imageUrl: "https://file3.qdnd.vn/data/images/0/2025/01/29/upload_2176/dhvi.jpg?dpi=150&quality=100&w=870",
     events: [
-      { year: "1986", title: "Đại hội VI - Bước ngoặt Đổi mới", description: "Xóa bỏ cơ chế bao cấp, phát triển kinh tế nhiều thành phần, mở ra thời kỳ đổi mới toàn diện." },
-      { year: "1995", title: "Hội nhập quốc tế", description: "Việt Nam chính thức gia nhập ASEAN và bình thường hóa quan hệ với Hoa Kỳ." },
-      { year: "2007", title: "Gia nhập WTO", description: "Bước tiến quan trọng trong hội nhập kinh tế thế giới, đẩy mạnh công nghiệp hóa, hiện đại hóa." },
-      { year: "Hiện nay", title: "Đẩy mạnh chuyển đổi số", description: "Tiếp tục thực hiện đổi mới, xây dựng Đảng trong sạch, vững mạnh và phát triển bền vững." }
+      { year: "1975 - 1976", title: "Thống nhất đất nước về mặt Nhà nước", description: "Quốc hội quyết định tên nước là Cộng hòa Xã hội Chủ nghĩa Việt Nam, thủ đô là Hà Nội và đổi tên Sài Gòn thành Thành phố Hồ Chí Minh.", link: ""},
+      { year: "1976 - 1981", title: "Xây dựng CNXH và Chiến tranh biên giới", description: "Đất nước rơi vào khủng hoảng kinh tế - xã hội nghiêm trọng do hậu quả chiến tranh và mô hình quản lý tập trung quan liêu, bao cấp.", link: ""},
+      { year: "1982 - 1986", title: "Tìm tòi đường lối Đổi mới", description: "Đại hội V của Đảng xác định nông nghiệp là mặt trận hàng đầu.Chỉ thị 100 (Khoán sản phẩm trong nông nghiệp), Nghị quyết Hội nghị TW 8 khóa V (xóa bỏ bao cấp qua giá), tạo tiền đề cho công cuộc Đổi mới.", link: ""},
+      { year: "1986", title: "Đại hội VI - Bước ngoặt Đổi mới", description: "Xóa bỏ cơ chế bao cấp, phát triển kinh tế nhiều thành phần, mở ra thời kỳ đổi mới toàn diện." , link: ""},
+      { year: "1991", title: "Cương lĩnh xây dựng đất nước", description: "Đại hội VII thông qua Cương lĩnh xây dựng đất nước trong thời kỳ quá độ lên CNXH.", link: ""},
+      { year: "1995", title: "Hội nhập quốc tế", description: "Việt Nam chính thức gia nhập ASEAN và bình thường hóa quan hệ với Hoa Kỳ.", link: "" },
+      { year: "1996", title: "Thoát khỏi khủng hoảng", description: "Đại hội VIII khẳng định nước ta đã ra khỏi khủng hoảng kinh tế - xã hội, bắt đầu đẩy mạnh Công nghiệp hóa - Hiện đại hóa (CNH-HĐH).", link: ""},
+      { year: "2006", title: "Gia nhập WTO", description: "Việt Nam chính thức trở thành thành viên thứ 150 của Tổ chức Thương mại Thế giới (WTO).", link: ""},
+      { year: "2007", title: "Gia nhập WTO", description: "Bước tiến quan trọng trong hội nhập kinh tế thế giới, đẩy mạnh công nghiệp hóa, hiện đại hóa.", link: ""},
+      { year: "2011", title: "Xác định mục tiêu", description: "Đại hội XI thông qua Cương lĩnh bổ sung và phát triển, xác định mục tiêu đưa Việt Nam trở thành nước công nghiệp theo hướng hiện đại.", link: ""},
+      { year: "2016 - Nay", title: "Hội nhập sâu rộng và Cách mạng 4.0", description: "Đảng tập trung vào xây dựng, chỉnh đốn Đảng, phòng chống tham nhũng và thúc đẩy kinh tế số, đổi mới sáng tạo trong bối cảnh cuộc Cách mạng công nghiệp lần thứ tư.", link: "" }
     ]
   }
 ];
+
+// // --- COMPONENT TRANG CHI TIẾT GIAI ĐOẠN ---
+// const PhaseDetailPage = () => {
+//   const { id } = useParams();
+//   const navigate = useNavigate();
+//   const phase = timelineData.find(p => p.id === id);
+
+//   if (!phase) return <div className="pt-32 text-center font-serif text-2xl">Không tìm thấy dữ liệu</div>;
+
+//   return (
+//     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="pt-32 pb-20 max-w-4xl mx-auto px-6 min-h-screen">
+//       <button onClick={() => navigate('/')} className="flex items-center gap-2 text-heritage-red font-bold mb-8 hover:gap-3 transition-all">
+//         <ArrowLeft className="w-4 h-4" /> QUAY LẠI TRANG CHỦ
+//       </button>
+
+//       <div className="mb-12 border-b border-heritage-red/10 pb-8">
+//         <span className="text-heritage-red font-bold tracking-[0.2em] uppercase text-sm">{phase.period}</span>
+//         <h1 className="text-4xl font-serif font-bold mt-2 text-gray-900 leading-tight">{phase.title}</h1>
+//       </div>
+
+//       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mb-12 rounded-2xl overflow-hidden shadow-lg border border-heritage-red/5">
+//         <img src={phase.imageUrl} alt={phase.title} className="w-full h-80 object-cover" />
+//       </motion.div>
+
+//       <div className="space-y-6">
+//         {phase.events.map((event, idx) => (
+//           <motion.div 
+//             key={idx} 
+//             initial={{ opacity: 0, x: -20 }} 
+//             animate={{ opacity: 1, x: 0 }} 
+//             transition={{ delay: idx * 0.1 }}
+//             className="p-6 bg-white rounded-xl border border-heritage-red/5 shadow-sm hover:shadow-md transition-shadow"
+//           >
+//             <div className="flex flex-col md:flex-row gap-4">
+//               <div className="md:w-24 shrink-0 font-bold text-heritage-red text-lg border-b md:border-b-0 md:border-r border-heritage-red/10 pb-2 md:pb-0">
+//                 {event.year}
+//               </div>
+//               <div className="md:pl-4">
+//                 <h4 className="font-bold text-lg text-gray-900">{event.title}</h4>
+//                 <p className="text-gray-600 mt-1 leading-relaxed">{event.description}</p>
+//               </div>
+//             </div>
+//           </motion.div>
+//         ))}
+//       </div>
+//     </motion.div>
+//   );
+// };
 
 // --- COMPONENT TRANG CHI TIẾT GIAI ĐOẠN ---
 const PhaseDetailPage = () => {
@@ -442,44 +504,94 @@ const PhaseDetailPage = () => {
   if (!phase) return <div className="pt-32 text-center font-serif text-2xl">Không tìm thấy dữ liệu</div>;
 
   return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="pt-32 pb-20 max-w-4xl mx-auto px-6 min-h-screen">
-      <button onClick={() => navigate('/')} className="flex items-center gap-2 text-heritage-red font-bold mb-8 hover:gap-3 transition-all">
-        <ArrowLeft className="w-4 h-4" /> QUAY LẠI TRANG CHỦ
+    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="pt-32 pb-20 max-w-5xl mx-auto px-6 min-h-screen">
+      <button 
+        onClick={() => navigate('/')} 
+        className="flex items-center gap-2 font-black mb-10 hover:gap-4 transition-all"
+        style={{ color: '#E66F6E' }}
+      >
+        <ArrowLeft className="w-5 h-5" /> QUAY LẠI TRANG CHỦ
       </button>
 
-      <div className="mb-12 border-b border-heritage-red/10 pb-8">
-        <span className="text-heritage-red font-bold tracking-[0.2em] uppercase text-sm">{phase.period}</span>
-        <h1 className="text-4xl font-serif font-bold mt-2 text-gray-900 leading-tight">{phase.title}</h1>
+      {/* Header Giai đoạn */}
+      <div className="mb-12 border-b-2 border-[#E66F6E]/10 pb-10">
+        <span 
+          style={{ color: '#E66F6E' }}
+          className="font-black tracking-[0.3em] uppercase text-sm md:text-base"
+        >
+          {phase.period}
+        </span>
+        <h1 className="text-4xl md:text-6xl font-serif font-bold mt-4 text-gray-900 leading-tight">
+          {phase.title}
+        </h1>
       </div>
 
-      <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mb-12 rounded-2xl overflow-hidden shadow-lg border border-heritage-red/5">
-        <img src={phase.imageUrl} alt={phase.title} className="w-full h-80 object-cover" />
+      {/* Banner Hình ảnh */}
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }} 
+        animate={{ opacity: 1, y: 0 }} 
+        className="mb-16 rounded-[2rem] overflow-hidden shadow-2xl border border-[#E66F6E]/10"
+      >
+        <img src={phase.imageUrl} alt={phase.title} className="w-full h-[450px] object-cover" />
       </motion.div>
 
-      <div className="space-y-6">
+      {/* Danh sách sự kiện chi tiết */}
+      <div className="space-y-10">
         {phase.events.map((event, idx) => (
-          <motion.div 
+          <motion.a 
             key={idx} 
+            href={event.link} // Đường dẫn đến trang báo
+            target="_blank"   // Mở trong tab mới
+            rel="noopener noreferrer"
             initial={{ opacity: 0, x: -20 }} 
             animate={{ opacity: 1, x: 0 }} 
             transition={{ delay: idx * 0.1 }}
-            className="p-6 bg-white rounded-xl border border-heritage-red/5 shadow-sm hover:shadow-md transition-shadow"
+            className="block p-8 bg-white rounded-3xl border border-[#E66F6E]/5 shadow-sm hover:shadow-xl hover:border-[#E66F6E]/30 transition-all group cursor-pointer"
+            //className="p-8 bg-white rounded-3xl border border-[#E66F6E]/5 shadow-sm hover:shadow-xl transition-all"
           >
-            <div className="flex flex-col md:flex-row gap-4">
-              <div className="md:w-24 shrink-0 font-bold text-heritage-red text-lg border-b md:border-b-0 md:border-r border-heritage-red/10 pb-2 md:pb-0">
+            <div className="flex flex-col md:flex-row gap-6">
+              {/* Cột Năm: To và Đậm */}
+              <div 
+                style={{ color: '#E66F6E' }}
+                className="md:w-32 shrink-0 font-black text-2xl md:text-3xl border-b-2 md:border-b-0 md:border-r-2 border-[#E66F6E]/10 pb-4 md:pb-0 md:pr-4"
+              >
                 {event.year}
               </div>
-              <div className="md:pl-4">
-                <h4 className="font-bold text-lg text-gray-900">{event.title}</h4>
-                <p className="text-gray-600 mt-1 leading-relaxed">{event.description}</p>
+
+              {/* Cột Nội dung */}
+              {/* <div className="md:pl-2">
+                <h4 className="font-bold text-2xl md:text-3xl text-gray-900 leading-tight mb-4">
+                  {event.title}
+                </h4>
+                <p className="text-gray-600 text-lg md:text-xl leading-relaxed font-light">
+                  {event.description}
+                </p>
+              </div> */}
+
+              {/* Cột Nội dung */}
+              <div className="md:pl-2 flex-grow">
+                <div className="flex justify-between items-start">
+                  <h4 className="font-bold text-2xl md:text-3xl text-gray-900 leading-tight mb-4 group-hover:text-[#E66F6E] transition-colors">
+                    {event.title}
+                  </h4>
+                  {/* Icon báo hiệu link ngoài */}
+                  <ExternalLink className="w-6 h-6 text-gray-400 group-hover:text-[#E66F6E] mt-1" />
+                </div>
+                <p className="text-gray-600 text-lg md:text-xl leading-relaxed font-light">
+                  {event.description}
+                </p>
+                <div className="mt-4 text-sm font-bold text-[#E66F6E]/60 uppercase tracking-widest group-hover:text-[#E66F6E]">
+                  Click để đọc tư liệu chi tiết →
+                </div>
               </div>
             </div>
-          </motion.div>
+          </motion.a>
         ))}
       </div>
     </motion.div>
   );
 };
+
 // --- COMPONENT TRANG CHỦ ---
 const MainLanding = () => {
   const navigate = useNavigate();
